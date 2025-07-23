@@ -8,40 +8,25 @@ print("Current working directory:", os.getcwd())
 # File names for bus limit 50 and 80
 bus_limit_50_files = [
     "exp2_passengerdata_50_392.csv",
-    "exp2_passengerdata_50_896.csv",
-    "exp2_passengerdata_50_2968.csv",
-    "exp2_passengerdata_50_4032.csv",
-    "exp2_passengerdata_50_5040.csv",
-    "exp2_passengerdata_50_7952.csv",
+"exp2_passengerdata_50_896.csv","exp2_passengerdata_50_2968.csv",
+"exp2_passengerdata_50_4032.csv","exp2_passengerdata_50_5040.csv","exp2_passengerdata_50_7952.csv",
 ]
 
 bus_limit_80_files = [
     "exp2_passengerdata_80_392.csv",
-    "exp2_passengerdata_80_896.csv",
-    "exp2_passengerdata_80_2968.csv",
-    "exp2_passengerdata_80_4032.csv",
-    "exp2_passengerdata_80_5040.csv",
-    "exp2_passengerdata_80_7952.csv",
+"exp2_passengerdata_80_896.csv","exp2_passengerdata_80_2968.csv",
+"exp2_passengerdata_80_4032.csv","exp2_passengerdata_80_5040.csv","exp2_passengerdata_80_7952.csv",
 ]
 
 # Pod file names (first pod system)
 pod_files = [
-    "processed_392_pod_2.csv",
-    "processed_896_pod_2.csv",
-    "processed_2968_pod_2.csv",
-    "processed_4032_pod_2.csv",
-    "processed_5040_pod_2.csv",
-    "processed_7952_pod_2.csv",
+     "392_exp2.csv","896_exp2.csv","2968_exp2.csv","4032_exp2.csv","5040_exp2.csv","7952_exp2.csv",
 ]
 
 # Pod-optimized file names
 pod_opt_files = [
-     "processed_Excel392[2]_allocations.csv",
-     "processed_Excel896[2]_allocations.csv",
-    "processed_Excel2968[2]_allocations.csv",
-    "processed_Excel4032[2]_allocations.csv",
-    "processed_Excel5040[2]_allocations.csv",
-    "processed_Excel7952[2]_allocations.csv",
+    "392_exp2_allocations.csv","896_exp2_allocations.csv","2968_exp2_allocations.csv",
+"4032_exp2_allocations.csv","5040_exp2_allocations.csv","7952_exp2_allocations.csv",
 ]
 
 # Function to calculate average waiting_time for any file
@@ -71,7 +56,7 @@ def get_average_waiting_time(file_name):
         return None
 
 # Unified passenger counts for the x-axis
-passenger_counts = [392, 896, 2968, 4032, 5040, 7952]
+passenger_counts = [392,896,2968, 4032, 5040, 7952]
 
 # Calculate average waiting times for all systems
 avg_waiting_time_50 = [get_average_waiting_time(file) for file in bus_limit_50_files]

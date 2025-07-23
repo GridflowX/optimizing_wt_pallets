@@ -23,15 +23,15 @@ def run(script_path):
     else:
         print(f"Completed: {script_path}\n")
 
-# Sequence of scripts
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Build absolute paths to each experiment script
+# Sequence of scripts
 scripts = [
-    os.path.join(current_dir, "exp1_Unoptimized.py"),
-    os.path.join(current_dir, "exp1_Optimized.py"),
-    os.path.join(current_dir, "truck_automated_exp1.py")
+    os.path.join(current_dir, "exp3_Unoptimized.py"),
+    os.path.join(current_dir, "exp3_Optimized.py"),
+    os.path.join(current_dir, "truck_automated_exp3.py")
 ]
+
 
 for script in scripts:
     run(script)

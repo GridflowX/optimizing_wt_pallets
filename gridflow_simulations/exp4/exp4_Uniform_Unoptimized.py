@@ -2,9 +2,14 @@ import random
 import networkx as nx
 import sqlite3
 import csv
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 
 # Initialize database connection
-conn = sqlite3.connect('../database/collide.db')
+conn = sqlite3.connect(os.path.join(current_dir, 'collide.db'))
+
 cursor = conn.cursor()
 
 # Initialize time-based graph
@@ -35,7 +40,7 @@ minimum_distance = 4
 board_deboard = 4
 
 # Passenger counts and output file
-passenger_counts = [392, 896, 2968, 4032, 5040, 7952]
+passenger_counts = [ 7952]
 output_files = [f"{count}_exp4_uniform.csv" for count in passenger_counts]
 
 # Utility functions

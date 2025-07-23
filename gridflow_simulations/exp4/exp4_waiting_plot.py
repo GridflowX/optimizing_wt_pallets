@@ -12,7 +12,7 @@ bus_limit_50_files = [
     "exp4_passengerdata_50_2968.csv",
     "exp4_passengerdata_50_4032.csv",
     "exp4_passengerdata_50_5040.csv",
-    "exp4_passengerdata_50_7952.csv",
+    "exp4_passengerdata_50_7952.csv"
 ]
 
 bus_limit_80_files = [
@@ -21,48 +21,32 @@ bus_limit_80_files = [
     "exp4_passengerdata_80_2968.csv",
     "exp4_passengerdata_80_4032.csv",
     "exp4_passengerdata_80_5040.csv",
-    "exp4_passengerdata_80_7952.csv",
+    "exp4_passengerdata_80_7952.csv"
 ]
 
-# Pod file names (first pod system)
+# Pod file names uniform (first pod system)
 pod_files = [
-    "processed_392_pod_4.csv",
-    "processed_896_pod_4.csv",
-    "processed_2968_pod_4.csv",
-    "processed_4032_pod_4.csv",
-    "processed_5040_pod_4.csv",
-    "processed_7952_pod_4.csv",
+    "392_exp4_uniform.csv","896_exp4_uniform.csv","2968_exp4_uniform.csv","4032_exp4_uniform.csv",
+    "5040_exp4_uniform.csv","7952_exp4_uniform.csv"
 ]
 
 
 # Pod-optimized file names
 pod_opt_files = [
-    "processed_Excel392_pod_4_allocations.csv",
-    "processed_Excel896_pod_4_allocations.csv",
-    "processed_Excel2968_pod_4_allocations.csv",
-    "processed_Excel4032_pod_4_allocations.csv",
-    "processed_Excel5040_pod_4_allocations.csv",
-    "processed_Excel7952_pod_4_allocations.csv",
+    "392_exp4_uniform_allocations.csv","896_exp4_uniform_allocations.csv","2968_exp4_uniform_allocations.csv","4032_exp4_uniform_allocations.csv",
+    "5040_exp4_uniform_allocations.csv","7952_exp4_uniform_allocations.csv"
 ]
 
-# Alternative pod system 1 file names
+# Alternative pod system 1 file names using exp3 not optimized
 pod_alt1_files = [
-    "processed_392_pod_4_3.csv",
-    "processed_896_pod_4_3.csv",
-    "processed_2968_pod_4_3.csv",
-    "processed_4032_pod_4_3.csv",
-    "processed_5040_pod_4_3.csv",
-    "processed_7952_pod_4_3.csv",
+    "392_exp4_non-uniform.csv","896_exp4_non-uniform.csv","2968_exp4_non-uniform.csv","4032_exp4_non-uniform.csv",
+    "5040_exp4_non-uniform.csv","7952_exp4_non-uniform.csv"
 ]
 
-# Alternative pod system 2 file names
+# Alternative pod system 2 file names optimized
 pod_alt2_files = [
-    "processed_Excel392_pod_4_3_allocations.csv",
-    "processed_Excel896_pod_4_3_allocations.csv",
-    "processed_Excel2968_pod_4_3_allocations.csv",
-    "processed_Excel4032_pod_4_3_allocations.csv",
-    "processed_Excel5040_pod_4_3_allocations.csv",
-    "processed_Excel7952_pod_4_3_allocations.csv",
+    "392_exp4_non-uniform_allocations.csv","2968_exp4_non-uniform_allocations.csv","4032_exp4_non-uniform_allocations.csv","7952_exp4_non-uniform_allocations.csv",
+    "5040_exp4_non-uniform_allocations.csv","7952_exp4_non-uniform_allocations.csv"
 ]
 
 # Function to calculate average waiting_time for any file
@@ -92,7 +76,7 @@ def get_average_waiting_time(file_name):
         return None
 
 # Unified passenger counts for the x-axis
-passenger_counts = [392, 896, 2968, 4032, 5040, 7952]
+passenger_counts = [ 7952]
 
 # Calculate average waiting times for all systems
 avg_waiting_time_50 = [get_average_waiting_time(file) for file in bus_limit_50_files]

@@ -6,12 +6,15 @@ import pandas as pd
 import os
 from datetime import datetime
 import numpy as np  # Add numpy for bimodal Gaussian distribution
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Define bus stops
 elements = ['A', 'B', 'C', 'D', 'P', 'Q', 'R', 'S']
 
 # Connect to the SQLite database
-conn = sqlite3.connect(r'C:\Users\gouri\Downloads\Bus Simulation\buss.db')
+conn = sqlite3.connect(os.path.join(current_dir, 'buss.db'))
 cursor = conn.cursor()
 
 # Define bus network graph (travel times in seconds)
@@ -116,7 +119,7 @@ def calculate_distance_for_passengers():
                 total_distance += distance
         cursor.execute("UPDATE passenger SET distance = ? WHERE id = ?", (total_distance, passenger_id))
     conn.commit()
-    print("✅ Distance updated for all passengers.")
+    print("Distance updated for all passengers.")
 
 
 # Function to process bus operations
@@ -349,7 +352,7 @@ def main_simulation(total_passenger_count, capacity):
 
 
 # Process all passenger counts for both capacities
-passenger_counts = [896]  # Updated passenger counts
+passenger_counts = [392, 896, 2968, 4032, 5040, 7952]  # Updated passenger counts
 capacities = [50, 80]
 
 for passenger_count in passenger_counts:

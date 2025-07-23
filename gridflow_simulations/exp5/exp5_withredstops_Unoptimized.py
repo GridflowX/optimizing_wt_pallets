@@ -6,7 +6,7 @@ import csv
 import math
 
 # Initialize database connection
-conn = sqlite3.connect('../database/collide.db')
+conn = sqlite3.connect('collide.db')
 cursor = conn.cursor()
 
 # Initialize the graph

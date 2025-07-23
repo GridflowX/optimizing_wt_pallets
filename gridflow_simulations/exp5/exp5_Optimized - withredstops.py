@@ -27,12 +27,13 @@ g.add_edge('P', 'Q', weight=10)
 g.add_edge('R', 'S', weight=5)
 
 board_deboard = 4
-os.makedirs("output", exist_ok=True)
+#os.makedirs("output", exist_ok=True)
 MAX_PODS = 184
 
 # Now CSV files instead of Excel files
 csv_files = [
-    "392_exp5_blue_red.csv", "896_exp5_blue_red.csv", "2968_exp5_blue_red.csv", "4032_exp5_blue_red.csv", "5040_exp5_blue_red.csv", "7952_exp5_blue_red.csv"
+    "392_exp5_blue_red.csv", "896_exp5_blue_red.csv", "2968_exp5_blue_red.csv", "4032_exp5_blue_red.csv", "5040_exp5_blue_red.csv",
+    "7952_exp5_blue_red.csv"
 ]
 
 def travel_time(from_stop, to_stop):
@@ -61,7 +62,7 @@ for file in csv_files:
     nonempty_total_km = 0
 
     base = os.path.splitext(file)[0]
-    out_csv = f"output/{base}_allocations.csv"
+    out_csv = f"{base}_allocations.csv"
 
     for _, row in df.iterrows():
         pid = row["pid"]
@@ -142,9 +143,9 @@ for file in csv_files:
         ])
         pod_usage_log[pod_id].append(pid)
 
-    print(f"\n📊 Summary for {file}")
-    print(f"📏 Total Empty Distance: {empty_total_km:.2f} km")
-    print(f"📦 Total Non-Empty Distance: {nonempty_total_km:.2f} km")
+    print(f"\n Summary for {file}")
+    print(f" Total Empty Distance: {empty_total_km:.2f} km")
+    print(f" Total Non-Empty Distance: {nonempty_total_km:.2f} km")
 
     df_alloc = pd.DataFrame(allocations, columns=[
         "pid", "arrival_stop", "destination_stop", "arrival_time", "destination_time",
@@ -153,4 +154,4 @@ for file in csv_files:
     ])
     df_alloc.to_csv(out_csv, index=False)
 
-    print(f"✅ Done: {file} → Allocations saved to {out_csv}")
+    print(f" Done: {file}  Allocations saved to {out_csv}")

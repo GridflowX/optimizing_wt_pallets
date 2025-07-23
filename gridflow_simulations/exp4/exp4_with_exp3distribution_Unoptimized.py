@@ -2,9 +2,13 @@ import random
 import networkx as nx
 import sqlite3
 import csv
+import os
 
-# Database setup
-conn = sqlite3.connect('collide.db')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+# Initialize database connection
+conn = sqlite3.connect(os.path.join(current_dir, 'collide.db'))
 cursor = conn.cursor()
 
 # Graph setup (time-based)
@@ -33,7 +37,7 @@ stops = ['A', 'B', 'C', 'D', 'P', 'Q', 'R', 'S']
 minimum_distance = 4
 board_deboard = 4
 
-passenger_counts = [392, 896, 2968, 4032, 5040,7952]
+passenger_counts = [7952]
 output_files = [f"{count}_exp4_non-uniform.csv" for count in passenger_counts]
 
 # Pod distribution for Experiment 2

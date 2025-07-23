@@ -26,22 +26,13 @@ bus_limit_80_files = [
 
 # Pod file names (first pod system)
 pod_files = [
-    "processed_392_pod_3.csv",
-    "processed_896_pod_3.csv",
-    "processed_2968_pod_3.csv",
-    "processed_4032_pod_3.csv",
-    "processed_5040_pod_3.csv",
-    "processed_7952_pod_3.csv",
+     "392_exp3.csv","896_exp3.csv","2968_exp3.csv","4032_exp3.csv","5040_exp3.csv","7952_exp3.csv",
 ]
 
 # Pod-optimized file names
 pod_opt_files = [
-    "processed_Excel392[3]_allocations.csv",
-    "processed_Excel896[3]_allocations.csv",
-    "processed_Excel2968[3]_allocations.csv",
-    "processed_Excel4032[3]_allocations.csv",
-    "processed_Excel5040[3]_allocations.csv",
-    "processed_Excel7952[3]_allocations.csv",
+    "392_exp3_allocations.csv","896_exp3_allocations.csv","2968_exp3_allocations.csv","4032_exp3_allocations.csv",
+"5040_exp3_allocations.csv","7952_exp3_allocations.csv"
 ]
 
 # Function to calculate average waiting_time for any file
@@ -71,7 +62,7 @@ def get_average_waiting_time(file_name):
         return None
 
 # Unified passenger counts for the x-axis
-passenger_counts = [392, 896, 2968, 4032, 5040, 7952]
+passenger_counts = [ 392, 896, 2968, 4032, 5040, 7952]
 
 # Calculate average waiting times for all systems
 avg_waiting_time_50 = [get_average_waiting_time(file) for file in bus_limit_50_files]

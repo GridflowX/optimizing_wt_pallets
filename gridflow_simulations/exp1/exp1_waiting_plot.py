@@ -7,21 +7,25 @@ print("Current working directory:", os.getcwd())
 
 # File names for bus limit 50 and 80
 bus_limit_50_files = [
-    "exp1_passengerdata_50_392.csv","exp1_passengerdata_50_896.csv"
+      "exp1_passengerdata_50_392.csv",
+"exp1_passengerdata_50_896.csv","exp1_passengerdata_50_2968.csv",
+"exp1_passengerdata_50_4032.csv","exp1_passengerdata_50_5040.csv","exp1_passengerdata_50_7952.csv",
 ]
 
 bus_limit_80_files = [
-    "exp1_passengerdata_80_392.csv","exp1_passengerdata_80_896.csv"
+    "exp1_passengerdata_80_392.csv","exp1_passengerdata_80_896.csv","exp1_passengerdata_80_2968.csv",
+"exp1_passengerdata_80_4032.csv","exp1_passengerdata_80_5040.csv","exp1_passengerdata_80_7952.csv",
 ]
 
 # Pod file names (unoptimized pod system)
 pod_files = [
-    "392_exp1.csv","896_exp1.csv"
+    "392_exp1.csv","896_exp1.csv","2968_exp1.csv","4032_exp1.csv","5040_exp1.csv","7952_exp1.csv",
 ]
 
 # Pod-optimized file names
 pod_opt_files = [
-    "392_exp1_allocations.csv","896_exp1_allocations.csv"
+    "392_exp1_allocations.csv","896_exp1_allocations.csv","2968_exp1_allocations.csv",
+"4032_exp1_allocations.csv","5040_exp1_allocations.csv","7952_exp1_allocations.csv",
 ]
 
 # Function to calculate average waiting_time for any file
@@ -51,7 +55,7 @@ def get_average_waiting_time(file_name):
         return None
 
 # Unified passenger counts for the x-axis
-passenger_counts = [392, 896]
+passenger_counts = [392, 896, 2968, 4032, 5040,7952]
 
 # Calculate average waiting times for all systems
 avg_waiting_time_50 = [get_average_waiting_time(file) for file in bus_limit_50_files]
